@@ -160,7 +160,7 @@
         <Component class="javax.swing.JButton" name="computer">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Anan\Documents\NetBeansProjects\Shop Management\img\computer.png"/>
+              <Image iconType="2" name="C:\Users\ASUS\Documents\GitHub\Shop-Management-\Shop Management\img\computer.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton1"/>
           </Properties>
@@ -179,7 +179,7 @@
         <Component class="javax.swing.JButton" name="fashion">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Anan\Documents\NetBeansProjects\Shop Management\img\fashion.png"/>
+              <Image iconType="2" name="C:\Users\ASUS\Documents\GitHub\Shop-Management-\Shop Management\img\fashion.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton1"/>
           </Properties>
@@ -198,7 +198,7 @@
         <Component class="javax.swing.JButton" name="grocerries">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Anan\Documents\NetBeansProjects\Shop Management\img\grocerries.png"/>
+              <Image iconType="2" name="C:\Users\ASUS\Documents\GitHub\Shop-Management-\Shop Management\img\grocerries.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton1"/>
           </Properties>
@@ -217,7 +217,7 @@
         <Component class="javax.swing.JButton" name="home">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Anan\Documents\NetBeansProjects\Shop Management\img\home.png"/>
+              <Image iconType="2" name="C:\Users\ASUS\Documents\GitHub\Shop-Management-\Shop Management\img\home.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton1"/>
           </Properties>

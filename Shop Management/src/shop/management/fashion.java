@@ -47,14 +47,14 @@ public class fashion extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Men");
 
-        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Anan\\Documents\\NetBeansProjects\\Shop Management\\img\\man.png")); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Documents\\GitHub\\Shop-Management-\\Shop Management\\img\\man.png")); // NOI18N
         jButton1.setText("jButton1");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Women");
 
-        jButton2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Anan\\Documents\\NetBeansProjects\\Shop Management\\img\\woman.png")); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Documents\\GitHub\\Shop-Management-\\Shop Management\\img\\woman.png")); // NOI18N
         jButton2.setText("jButton1");
 
         jButton3.setText("Back");
