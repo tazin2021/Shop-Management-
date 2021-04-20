@@ -178,7 +178,36 @@ public class register extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         
-       
+       String nm = name.getText();
+        String em = email.getText();
+        String phn = phone.getText();
+        String pass = String.valueOf(password.getPassword());
+        String addr = address.getText();
+  
+            Connection dbcon = DBconnect.connectDB();
+        if(dbcon != null){
+        try {
+            PreparedStatement st = (PreparedStatement)    
+            dbcon.prepareStatement("INSERT INTO login(name, email, phone, password, address) VALUES (?,?,?,?,?)");
+            
+            st.setString(1, nm);
+            st.setString(2, em);
+            st.setString(3, phn);
+            st.setString(4, pass);
+            st.setString(5, addr);
+                        
+            int rs = st.executeUpdate();
+            
+            JOptionPane.showMessageDialog(this, "Registratioin Successful.", 
+                    "Success", JOptionPane.INFORMATION_MESSAGE);
+            
+            
+            } catch (SQLException ex) {
+            Logger.getLogger(register.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        }else{
+           System.out.println("The connection is not available");
+        }
       
     }//GEN-LAST:event_jButton2ActionPerformed
 
