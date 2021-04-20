@@ -60,6 +60,11 @@ public class home extends javax.swing.JFrame {
 
         fashion.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Documents\\GitHub\\Shop-Management-\\Shop Management\\img\\fashion.png")); // NOI18N
         fashion.setText("jButton1");
+        fashion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fashionActionPerformed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -145,6 +150,12 @@ public class home extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(559, 840));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void fashionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fashionActionPerformed
+          fashion fh = new fashion();
+          fh.setVisible(true);
+          this.dispose();
+    }//GEN-LAST:event_fashionActionPerformed
 
     /**
      * @param args the command line arguments
