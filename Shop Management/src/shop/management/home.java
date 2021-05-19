@@ -51,14 +51,19 @@ public class home extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Computer & Electronic");
 
-        computer.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Documents\\GitHub\\Shop-Management-\\Shop Management\\img\\computer.png")); // NOI18N
+        computer.setIcon(new javax.swing.ImageIcon("C:\\Users\\user\\Documents\\GitHub\\Shop-Management-\\Shop Management\\img\\computer.png")); // NOI18N
         computer.setText("jButton1");
+        computer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                computerActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Fashion");
 
-        fashion.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Documents\\GitHub\\Shop-Management-\\Shop Management\\img\\fashion.png")); // NOI18N
+        fashion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/shop/management/fashion.png"))); // NOI18N
         fashion.setText("jButton1");
         fashion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -70,14 +75,14 @@ public class home extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Grocerries");
 
-        grocerries.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Documents\\GitHub\\Shop-Management-\\Shop Management\\img\\grocerries.png")); // NOI18N
+        grocerries.setIcon(new javax.swing.ImageIcon(getClass().getResource("/shop/management/grocerries.png"))); // NOI18N
         grocerries.setText("jButton1");
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("House");
 
-        home.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Documents\\GitHub\\Shop-Management-\\Shop Management\\img\\home.png")); // NOI18N
+        home.setIcon(new javax.swing.ImageIcon(getClass().getResource("/shop/management/home.png"))); // NOI18N
         home.setText("jButton1");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -156,6 +161,12 @@ public class home extends javax.swing.JFrame {
           fh.setVisible(true);
           this.dispose();
     }//GEN-LAST:event_fashionActionPerformed
+
+    private void computerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_computerActionPerformed
+       Computer cm = new Computer();
+       cm.setVisible(true);
+       this.dispose();
+    }//GEN-LAST:event_computerActionPerformed
 
     /**
      * @param args the command line arguments

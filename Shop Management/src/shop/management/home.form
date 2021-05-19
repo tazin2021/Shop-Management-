@@ -160,10 +160,13 @@
         <Component class="javax.swing.JButton" name="computer">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\ASUS\Documents\GitHub\Shop-Management-\Shop Management\img\computer.png"/>
+              <Image iconType="2" name="C:\Users\user\Documents\GitHub\Shop-Management-\Shop Management\img\computer.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton1"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="computerActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
@@ -179,7 +182,7 @@
         <Component class="javax.swing.JButton" name="fashion">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\ASUS\Documents\GitHub\Shop-Management-\Shop Management\img\fashion.png"/>
+              <Image iconType="3" name="/shop/management/fashion.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton1"/>
           </Properties>
@@ -201,7 +204,7 @@
         <Component class="javax.swing.JButton" name="grocerries">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\ASUS\Documents\GitHub\Shop-Management-\Shop Management\img\grocerries.png"/>
+              <Image iconType="3" name="/shop/management/grocerries.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton1"/>
           </Properties>
@@ -220,7 +223,7 @@
         <Component class="javax.swing.JButton" name="home">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\ASUS\Documents\GitHub\Shop-Management-\Shop Management\img\home.png"/>
+              <Image iconType="3" name="/shop/management/home.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton1"/>
           </Properties>
