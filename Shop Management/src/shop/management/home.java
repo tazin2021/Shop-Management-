@@ -51,6 +51,7 @@ public class home extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Computer & Electronic");
 
+        computer.setIcon(new javax.swing.ImageIcon("C:\\Users\\user\\Documents\\GitHub\\Shop-Management-\\Shop Management\\img\\computer.png")); // NOI18N
         computer.setText("jButton1");
         computer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,6 +77,11 @@ public class home extends javax.swing.JFrame {
 
         grocerries.setIcon(new javax.swing.ImageIcon(getClass().getResource("/shop/management/grocerries.png"))); // NOI18N
         grocerries.setText("jButton1");
+        grocerries.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                grocerriesActionPerformed(evt);
+            }
+        });
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -177,6 +183,12 @@ house hu =new house();
 hu.setVisible(true);
 this.dispose();
     }//GEN-LAST:event_homeActionPerformed
+
+    private void grocerriesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_grocerriesActionPerformed
+        grocerries gr = new grocerries();
+        gr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_grocerriesActionPerformed
 
     /**
      * @param args the command line arguments
