@@ -1,5 +1,10 @@
 package shop.management;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -30,27 +35,27 @@ public class Computer extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        ptype = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        pquantity = new javax.swing.JTextField();
+        mprice = new javax.swing.JTextField();
+        pbuy = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        mtype = new javax.swing.JComboBox<>();
+        pprice = new javax.swing.JTextField();
+        mquantity = new javax.swing.JTextField();
+        mbuy = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox<>();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
+        rtype = new javax.swing.JComboBox<>();
+        gquantity = new javax.swing.JTextField();
+        rprice = new javax.swing.JTextField();
+        gbuy = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
-        jComboBox4 = new javax.swing.JComboBox<>();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
+        gtype = new javax.swing.JComboBox<>();
+        gprice = new javax.swing.JTextField();
+        rquantity = new javax.swing.JTextField();
+        rbuy = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -70,7 +75,7 @@ public class Computer extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Type");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AMD Ryzen 9", "AMD Ryzen 7", "AMD Ryzen 5", "AMD Ryzen 3", "INTEL Core i 9", "INTEL Core i 7", "INTEL Core i 5", "INTEL Core i 3" }));
+        ptype.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AMD Ryzen 9", "AMD Ryzen 7", "AMD Ryzen 5", "AMD Ryzen 3", "INTEL Core i 9", "INTEL Core i 7", "INTEL Core i 5", "INTEL Core i 3" }));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -80,16 +85,16 @@ public class Computer extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Quantity");
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        mprice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                mpriceActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Buy");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        pbuy.setText("Buy");
+        pbuy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                pbuyActionPerformed(evt);
             }
         });
 
@@ -97,23 +102,23 @@ public class Computer extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Motherboard");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gigabyte X570 Aorus Xtreme DDR4 AM4 Socket AMD Motherboard", "Gigabyte B450M AORUS Elite AMD Gaming Motherboard", "Gigabyte Z490 Aorus Elite AC 10th Gen WiFi ATX Motherboard", "ASUS ROG Strix Z490-E Gaming Wi-Fi Intel 10th Gen ATX Motherboard", "ASUS TUF Gaming B550 Plus ATX AM4 Motherboard", "ASUS  Prime H410M-CS DDR4 10th Gen Intel 1200 Socket Micro ATX Motherboard", "Asrock Z590M Phantom Gaming 4 10th and 11th Gen ATX Motherboard", "Asrock B550 Phantom Gaming 4 AMD Motherboard", "Asrock B550M Steel Legend DDR4 AMD Motherboard" }));
-        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+        mtype.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gigabyte X570 Aorus Xtreme DDR4 AM4 Socket AMD Motherboard", "Gigabyte B450M AORUS Elite AMD Gaming Motherboard", "Gigabyte Z490 Aorus Elite AC 10th Gen WiFi ATX Motherboard", "ASUS ROG Strix Z490-E Gaming Wi-Fi Intel 10th Gen ATX Motherboard", "ASUS TUF Gaming B550 Plus ATX AM4 Motherboard", "ASUS  Prime H410M-CS DDR4 10th Gen Intel 1200 Socket Micro ATX Motherboard", "Asrock Z590M Phantom Gaming 4 10th and 11th Gen ATX Motherboard", "Asrock B550 Phantom Gaming 4 AMD Motherboard", "Asrock B550M Steel Legend DDR4 AMD Motherboard" }));
+        mtype.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox2ActionPerformed(evt);
+                mtypeActionPerformed(evt);
             }
         });
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        pprice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                ppriceActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Buy");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        mbuy.setText("Buy");
+        mbuy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                mbuyActionPerformed(evt);
             }
         });
 
@@ -121,24 +126,24 @@ public class Computer extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Ram");
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Corsair Dominator Platinum RGB 8GB 3200MHz DDR4 RAM", "Corsair Dominator Platinum RGB 8GB 3600MHz DDR4 RAM", "Corsair Vengeance RGB Pro 16GB DDR4 3600MHz RAM", "G.skill Trident Z NEO RGB 8GB 3600MHz Gaming Desktop RAM", "G.skill Trident Z 8GB DDR4 3200MHz Desktop RAM", "G.skill Trident Z RGB 8GB DDR4 3200MHz Gaming Desktop RAM" }));
+        rtype.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Corsair Dominator Platinum RGB 8GB 3200MHz DDR4 RAM", "Corsair Dominator Platinum RGB 8GB 3600MHz DDR4 RAM", "Corsair Vengeance RGB Pro 16GB DDR4 3600MHz RAM", "G.skill Trident Z NEO RGB 8GB 3600MHz Gaming Desktop RAM", "G.skill Trident Z 8GB DDR4 3200MHz Desktop RAM", "G.skill Trident Z RGB 8GB DDR4 3200MHz Gaming Desktop RAM" }));
 
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        gquantity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                gquantityActionPerformed(evt);
             }
         });
 
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        rprice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                rpriceActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Buy");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        gbuy.setText("Buy");
+        gbuy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                gbuyActionPerformed(evt);
             }
         });
 
@@ -146,24 +151,24 @@ public class Computer extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("GPU");
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gigabyte rtx 3090", "Gigabyte rtx 3070", "Gigabyte rtx 2080 ti", "Sapphire r5 230", "Sapphire 6670", "Sapphire 7810" }));
+        gtype.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gigabyte rtx 3090", "Gigabyte rtx 3070", "Gigabyte rtx 2080 ti", "Sapphire r5 230", "Sapphire 6670", "Sapphire 7810" }));
 
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+        gprice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
+                gpriceActionPerformed(evt);
             }
         });
 
-        jTextField8.addActionListener(new java.awt.event.ActionListener() {
+        rquantity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField8ActionPerformed(evt);
+                rquantityActionPerformed(evt);
             }
         });
 
-        jButton4.setText("Buy");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        rbuy.setText("Buy");
+        rbuy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                rbuyActionPerformed(evt);
             }
         });
 
@@ -190,17 +195,17 @@ public class Computer extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jLabel3)
-                        .addComponent(jComboBox1, 0, 186, Short.MAX_VALUE)
-                        .addComponent(jComboBox2, 0, 1, Short.MAX_VALUE)
-                        .addComponent(jComboBox3, 0, 1, Short.MAX_VALUE))
-                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(ptype, 0, 186, Short.MAX_VALUE)
+                        .addComponent(mtype, 0, 1, Short.MAX_VALUE)
+                        .addComponent(rtype, 0, 1, Short.MAX_VALUE))
+                    .addComponent(gtype, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(54, 54, 54)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(pprice, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mprice, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rprice, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(gprice, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(81, 81, 81)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -209,21 +214,21 @@ public class Computer extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(gquantity, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 135, Short.MAX_VALUE)
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(gbuy, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(rquantity, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(rbuy, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(mquantity, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(mbuy, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(pquantity, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(pbuy, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(89, 89, 89))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -249,33 +254,33 @@ public class Computer extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(rtype, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(rprice, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(rquantity, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(49, 49, 49)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(gtype, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(ptype, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pquantity, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pbuy, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pprice, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(31, 31, 31)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(mtype, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(mprice, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(mquantity, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(mbuy, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(45, 45, 45)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(rbuy, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(gquantity, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(gprice, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(gbuy, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(106, 106, 106)))
                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(47, 47, 47))
@@ -299,33 +304,33 @@ public class Computer extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void mpriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mpriceActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_mpriceActionPerformed
 
-    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+    private void mtypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mtypeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox2ActionPerformed
+    }//GEN-LAST:event_mtypeActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void ppriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ppriceActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_ppriceActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void gquantityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gquantityActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_gquantityActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void rpriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rpriceActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_rpriceActionPerformed
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void gpriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gpriceActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_gpriceActionPerformed
 
-    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
+    private void rquantityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rquantityActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField8ActionPerformed
+    }//GEN-LAST:event_rquantityActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         home hm = new home();        
@@ -333,29 +338,207 @@ hm.setVisible(true);
 this.dispose();
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-Payment py = new Payment();
-       py.setVisible(true);
-       this.dispose();        
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void pbuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pbuyActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        Payment py = new Payment();
-       py.setVisible(true);
-       this.dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+      String pt = String.valueOf(ptype.getSelectedItem());
+        String pp = pprice.getText();
+        String pq = pquantity.getText();
+        if(pt.isEmpty() || pp.isEmpty() || pq.isEmpty()){
+             JOptionPane.showMessageDialog(this, "Fill up the form properly.", 
+                     "Error", JOptionPane.ERROR_MESSAGE);
+        }else{
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-       Payment py = new Payment();
-       py.setVisible(true);
-       this.dispose();
-    }//GEN-LAST:event_jButton4ActionPerformed
+             Connection dbcon = DBconnect.connectDB();
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-          Payment py = new Payment();
-       py.setVisible(true);
-       this.dispose();
-    }//GEN-LAST:event_jButton3ActionPerformed
+            try {
+                PreparedStatement st = (PreparedStatement)
+                dbcon.prepareStatement("INSERT INTO processor (ptype,pprice,pquantity) VALUES(?,?,?)");
+
+
+
+            st.setString(1, pt);
+            st.setString(2, pp);
+            st.setString(3, pq);
+
+
+
+
+
+            int rs = st.executeUpdate();
+
+
+
+            JOptionPane.showMessageDialog(this, "Buy Successful.", 
+                    "Success", JOptionPane.INFORMATION_MESSAGE);
+
+               dispose();
+               Payment hm = new Payment();
+               hm.setVisible(true);
+
+            } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, "Fill up the form properly.", 
+                     "Error", JOptionPane.ERROR_MESSAGE);
+
+            pprice.setText("");
+            pprice.requestFocus();
+            ptype.setSelectedItem("");
+            pquantity.setText("");
+
+        }
+
+        }
+
+    }//GEN-LAST:event_pbuyActionPerformed
+
+    private void mbuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mbuyActionPerformed
+        String mt = String.valueOf(mtype.getSelectedItem());
+        String mp = mprice.getText();
+        String mq = mquantity.getText();
+        if(mt.isEmpty() || mp.isEmpty() || mq.isEmpty()){
+             JOptionPane.showMessageDialog(this, "Fill up the form properly.", 
+                     "Error", JOptionPane.ERROR_MESSAGE);
+        }else{
+
+             Connection dbcon = DBconnect.connectDB();
+
+            try {
+                PreparedStatement st = (PreparedStatement)
+                dbcon.prepareStatement("INSERT INTO motherboard (mtype,mprice,mquantity) VALUES(?,?,?)");
+
+
+
+            st.setString(1, mt);
+            st.setString(2, mp);
+            st.setString(3, mq);
+
+
+
+
+
+            int rs = st.executeUpdate();
+
+
+
+            JOptionPane.showMessageDialog(this, "Buy Successful.", 
+                    "Success", JOptionPane.INFORMATION_MESSAGE);
+
+               dispose();
+               Payment hm = new Payment();
+               hm.setVisible(true);
+
+            } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, "Fill up the form properly.", 
+                     "Error", JOptionPane.ERROR_MESSAGE);
+
+            mprice.setText("");
+            mprice.requestFocus();
+            mtype.setSelectedItem("");
+            mquantity.setText("");
+
+        }
+
+        }
+    }//GEN-LAST:event_mbuyActionPerformed
+
+    private void rbuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbuyActionPerformed
+         String rt = String.valueOf(rtype.getSelectedItem());
+        String rp = rprice.getText();
+        String rq = rquantity.getText();
+        if(rt.isEmpty() || rp.isEmpty() || rq.isEmpty()){
+             JOptionPane.showMessageDialog(this, "Fill up the form properly.", 
+                     "Error", JOptionPane.ERROR_MESSAGE);
+        }else{
+
+             Connection dbcon = DBconnect.connectDB();
+
+            try {
+                PreparedStatement st = (PreparedStatement)
+                dbcon.prepareStatement("INSERT INTO ram (rtype,rprice,rquantity) VALUES(?,?,?)");
+
+
+
+            st.setString(1, rt);
+            st.setString(2, rp);
+            st.setString(3, rq);
+
+
+
+
+
+            int rs = st.executeUpdate();
+
+
+
+            JOptionPane.showMessageDialog(this, "Buy Successful.", 
+                    "Success", JOptionPane.INFORMATION_MESSAGE);
+
+               dispose();
+               Payment hm = new Payment();
+               hm.setVisible(true);
+
+            } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, "Fill up the form properly.", 
+                     "Error", JOptionPane.ERROR_MESSAGE);
+
+            rprice.setText("");
+            rprice.requestFocus();
+            rtype.setSelectedItem("");
+            rquantity.setText("");
+
+        }
+
+        }
+    }//GEN-LAST:event_rbuyActionPerformed
+
+    private void gbuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gbuyActionPerformed
+             String gt = String.valueOf(gtype.getSelectedItem());
+        String gp = gprice.getText();
+        String gq = gquantity.getText();
+        if(gt.isEmpty() || gp.isEmpty() || gq.isEmpty()){
+             JOptionPane.showMessageDialog(this, "Fill up the form properly.", 
+                     "Error", JOptionPane.ERROR_MESSAGE);
+        }else{
+
+             Connection dbcon = DBconnect.connectDB();
+
+            try {
+                PreparedStatement st = (PreparedStatement)
+                dbcon.prepareStatement("INSERT INTO gpu (gtype,gprice,gquantity) VALUES(?,?,?)");
+
+
+
+            st.setString(1, gt);
+            st.setString(2, gp);
+            st.setString(3, gq);
+
+
+
+
+
+            int rs = st.executeUpdate();
+
+
+
+            JOptionPane.showMessageDialog(this, "Buy Successful.", 
+                    "Success", JOptionPane.INFORMATION_MESSAGE);
+
+               dispose();
+               Payment hm = new Payment();
+               hm.setVisible(true);
+
+            } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, "Fill up the form properly.", 
+                     "Error", JOptionPane.ERROR_MESSAGE);
+
+            gprice.setText("");
+            gprice.requestFocus();
+            gtype.setSelectedItem("");
+            gquantity.setText("");
+
+        }
+
+        }
+    }//GEN-LAST:event_gbuyActionPerformed
 
     /**
      * @param args the command line arguments
@@ -393,15 +576,11 @@ Payment py = new Payment();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton gbuy;
+    private javax.swing.JTextField gprice;
+    private javax.swing.JTextField gquantity;
+    private javax.swing.JComboBox<String> gtype;
     private javax.swing.JButton jButton5;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -411,14 +590,18 @@ Payment py = new Payment();
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
+    private javax.swing.JButton mbuy;
+    private javax.swing.JTextField mprice;
+    private javax.swing.JTextField mquantity;
+    private javax.swing.JComboBox<String> mtype;
+    private javax.swing.JButton pbuy;
+    private javax.swing.JTextField pprice;
+    private javax.swing.JTextField pquantity;
+    private javax.swing.JComboBox<String> ptype;
+    private javax.swing.JButton rbuy;
+    private javax.swing.JTextField rprice;
+    private javax.swing.JTextField rquantity;
+    private javax.swing.JComboBox<String> rtype;
     // End of variables declaration//GEN-END:variables
 
 }

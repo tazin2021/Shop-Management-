@@ -62,19 +62,19 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
                           <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBox1" pref="186" max="32767" attributes="0"/>
-                          <Component id="jComboBox2" alignment="0" pref="0" max="32767" attributes="0"/>
-                          <Component id="jComboBox3" pref="0" max="32767" attributes="0"/>
+                          <Component id="ptype" pref="186" max="32767" attributes="0"/>
+                          <Component id="mtype" alignment="0" pref="0" max="32767" attributes="0"/>
+                          <Component id="rtype" pref="0" max="32767" attributes="0"/>
                       </Group>
-                      <Component id="jComboBox4" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="gtype" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabel4" min="-2" pref="67" max="-2" attributes="0"/>
-                      <Component id="jTextField3" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
-                      <Component id="jTextField2" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
-                      <Component id="jTextField6" min="-2" pref="77" max="-2" attributes="0"/>
-                      <Component id="jTextField7" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
+                      <Component id="pprice" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
+                      <Component id="mprice" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
+                      <Component id="rprice" min="-2" pref="77" max="-2" attributes="0"/>
+                      <Component id="gprice" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -85,24 +85,24 @@
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Component id="jTextField5" min="-2" pref="77" max="-2" attributes="0"/>
+                                  <Component id="gquantity" min="-2" pref="77" max="-2" attributes="0"/>
                                   <EmptySpace pref="135" max="32767" attributes="0"/>
-                                  <Component id="jButton3" min="-2" pref="89" max="-2" attributes="0"/>
+                                  <Component id="gbuy" min="-2" pref="89" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
-                                  <Component id="jTextField8" min="-2" pref="77" max="-2" attributes="0"/>
+                                  <Component id="rquantity" min="-2" pref="77" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="jButton4" min="-2" pref="89" max="-2" attributes="0"/>
+                                  <Component id="rbuy" min="-2" pref="89" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
-                                  <Component id="jTextField4" min="-2" pref="77" max="-2" attributes="0"/>
+                                  <Component id="mquantity" min="-2" pref="77" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="jButton2" min="-2" pref="89" max="-2" attributes="0"/>
+                                  <Component id="mbuy" min="-2" pref="89" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
-                                  <Component id="jTextField1" min="-2" pref="77" max="-2" attributes="0"/>
+                                  <Component id="pquantity" min="-2" pref="77" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="jButton1" min="-2" pref="89" max="-2" attributes="0"/>
+                                  <Component id="pbuy" min="-2" pref="89" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
@@ -136,39 +136,39 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel7" min="-2" pref="39" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jComboBox3" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="jTextField6" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                  <Component id="jTextField8" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                  <Component id="rtype" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                                  <Component id="rprice" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                  <Component id="rquantity" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel8" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
-                              <Component id="jComboBox4" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="gtype" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField1" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                              <Component id="jButton1" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                              <Component id="jTextField3" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="ptype" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="pquantity" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="pbuy" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="pprice" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jComboBox2" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField2" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                              <Component id="jTextField4" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                              <Component id="jButton2" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="mtype" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="mprice" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="mquantity" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="mbuy" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-                          <Component id="jButton4" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="rbuy" min="-2" pref="40" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jTextField5" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                              <Component id="jTextField7" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                              <Component id="jButton3" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="gquantity" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="gprice" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="gbuy" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
                       </Group>
@@ -216,7 +216,7 @@
             <Property name="text" type="java.lang.String" value="Type"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox1">
+        <Component class="javax.swing.JComboBox" name="ptype">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="8">
@@ -257,19 +257,19 @@
             <Property name="text" type="java.lang.String" value="Quantity"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField1">
+        <Component class="javax.swing.JTextField" name="pquantity">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField2">
+        <Component class="javax.swing.JTextField" name="mprice">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mpriceActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="pbuy">
           <Properties>
             <Property name="text" type="java.lang.String" value="Buy"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pbuyActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel6">
@@ -283,7 +283,7 @@
             <Property name="text" type="java.lang.String" value="Motherboard"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox2">
+        <Component class="javax.swing.JComboBox" name="mtype">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="9">
@@ -300,25 +300,25 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mtypeActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField3">
+        <Component class="javax.swing.JTextField" name="pprice">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField3ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ppriceActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField4">
+        <Component class="javax.swing.JTextField" name="mquantity">
         </Component>
-        <Component class="javax.swing.JButton" name="jButton2">
+        <Component class="javax.swing.JButton" name="mbuy">
           <Properties>
             <Property name="text" type="java.lang.String" value="Buy"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mbuyActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel7">
@@ -332,7 +332,7 @@
             <Property name="text" type="java.lang.String" value="Ram"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox3">
+        <Component class="javax.swing.JComboBox" name="rtype">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="6">
@@ -349,22 +349,22 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField5">
+        <Component class="javax.swing.JTextField" name="gquantity">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField5ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="gquantityActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField6">
+        <Component class="javax.swing.JTextField" name="rprice">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField6ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rpriceActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton3">
+        <Component class="javax.swing.JButton" name="gbuy">
           <Properties>
             <Property name="text" type="java.lang.String" value="Buy"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="gbuyActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel8">
@@ -378,7 +378,7 @@
             <Property name="text" type="java.lang.String" value="GPU"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox4">
+        <Component class="javax.swing.JComboBox" name="gtype">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="6">
@@ -395,22 +395,22 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField7">
+        <Component class="javax.swing.JTextField" name="gprice">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField7ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="gpriceActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField8">
+        <Component class="javax.swing.JTextField" name="rquantity">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField8ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rquantityActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton4">
+        <Component class="javax.swing.JButton" name="rbuy">
           <Properties>
             <Property name="text" type="java.lang.String" value="Buy"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton4ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbuyActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButton5">
