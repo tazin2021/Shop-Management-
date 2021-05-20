@@ -51,7 +51,6 @@ public class home extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Computer & Electronic");
 
-        computer.setIcon(new javax.swing.ImageIcon("C:\\Users\\user\\Documents\\GitHub\\Shop-Management-\\Shop Management\\img\\computer.png")); // NOI18N
         computer.setText("jButton1");
         computer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,6 +83,11 @@ public class home extends javax.swing.JFrame {
 
         home.setIcon(new javax.swing.ImageIcon(getClass().getResource("/shop/management/home.png"))); // NOI18N
         home.setText("jButton1");
+        home.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                homeActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -167,6 +171,12 @@ public class home extends javax.swing.JFrame {
        cm.setVisible(true);
        this.dispose();
     }//GEN-LAST:event_computerActionPerformed
+
+    private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
+house hu =new house();
+hu.setVisible(true);
+this.dispose();
+    }//GEN-LAST:event_homeActionPerformed
 
     /**
      * @param args the command line arguments
