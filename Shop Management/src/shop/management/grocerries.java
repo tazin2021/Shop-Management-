@@ -36,22 +36,22 @@ public class grocerries extends javax.swing.JFrame {
         jLabel48 = new javax.swing.JLabel();
         jLabel49 = new javax.swing.JLabel();
         jLabel50 = new javax.swing.JLabel();
-        spricee = new javax.swing.JLabel();
+        sapricee = new javax.swing.JLabel();
         rprice = new javax.swing.JLabel();
         oprice = new javax.swing.JLabel();
         bprice = new javax.swing.JLabel();
         sprice = new javax.swing.JLabel();
         jLabel56 = new javax.swing.JLabel();
-        jButton16 = new javax.swing.JButton();
-        jButton17 = new javax.swing.JButton();
-        jButton18 = new javax.swing.JButton();
-        jButton19 = new javax.swing.JButton();
-        jButton20 = new javax.swing.JButton();
-        jSpinner17 = new javax.swing.JSpinner();
-        jSpinner18 = new javax.swing.JSpinner();
-        jSpinner19 = new javax.swing.JSpinner();
-        jSpinner20 = new javax.swing.JSpinner();
-        jSpinner21 = new javax.swing.JSpinner();
+        rbuy = new javax.swing.JButton();
+        sbuy = new javax.swing.JButton();
+        sabuy = new javax.swing.JButton();
+        bbuy = new javax.swing.JButton();
+        obuy = new javax.swing.JButton();
+        squantity = new javax.swing.JSpinner();
+        rquantity = new javax.swing.JSpinner();
+        oquantity = new javax.swing.JSpinner();
+        bquantity = new javax.swing.JSpinner();
+        saquantity = new javax.swing.JSpinner();
         jButton21 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -91,9 +91,9 @@ public class grocerries extends javax.swing.JFrame {
         jLabel50.setForeground(new java.awt.Color(255, 255, 255));
         jLabel50.setText("Bread");
 
-        spricee.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        spricee.setForeground(new java.awt.Color(255, 255, 255));
-        spricee.setText("30/kg");
+        sapricee.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        sapricee.setForeground(new java.awt.Color(255, 255, 255));
+        sapricee.setText("30/kg");
 
         rprice.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         rprice.setForeground(new java.awt.Color(255, 255, 255));
@@ -115,50 +115,50 @@ public class grocerries extends javax.swing.JFrame {
         jLabel56.setForeground(new java.awt.Color(255, 255, 255));
         jLabel56.setText("Quantity");
 
-        jButton16.setText("BUY");
-        jButton16.addActionListener(new java.awt.event.ActionListener() {
+        rbuy.setText("BUY");
+        rbuy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jButton17.setText("BUY");
-        jButton17.addActionListener(new java.awt.event.ActionListener() {
+        sbuy.setText("BUY");
+        sbuy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
 
-        jButton18.setText("BUY");
-        jButton18.addActionListener(new java.awt.event.ActionListener() {
+        sabuy.setText("BUY");
+        sabuy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
 
-        jButton19.setText("BUY");
-        jButton19.addActionListener(new java.awt.event.ActionListener() {
+        bbuy.setText("BUY");
+        bbuy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
 
-        jButton20.setText("BUY");
-        jButton20.addActionListener(new java.awt.event.ActionListener() {
+        obuy.setText("BUY");
+        obuy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
             }
         });
 
-        jSpinner17.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        squantity.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
 
-        jSpinner18.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        rquantity.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
 
-        jSpinner19.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        oquantity.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
 
-        jSpinner20.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        bquantity.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
 
-        jSpinner21.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        saquantity.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
 
         jButton21.setText("Baxk");
         jButton21.addActionListener(new java.awt.event.ActionListener() {
@@ -197,14 +197,14 @@ public class grocerries extends javax.swing.JFrame {
                                     .addComponent(oprice)
                                     .addComponent(sprice)
                                     .addComponent(bprice)
-                                    .addComponent(spricee))
+                                    .addComponent(sapricee))
                                 .addGap(245, 338, Short.MAX_VALUE)))
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton16)
-                            .addComponent(jButton17)
-                            .addComponent(jButton20)
-                            .addComponent(jButton18)
-                            .addComponent(jButton19))
+                            .addComponent(rbuy)
+                            .addComponent(sbuy)
+                            .addComponent(obuy)
+                            .addComponent(sabuy)
+                            .addComponent(bbuy))
                         .addGap(141, 141, 141))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -213,12 +213,12 @@ public class grocerries extends javax.swing.JFrame {
                                 .addComponent(jLabel43)
                                 .addGap(133, 133, 133)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jSpinner18, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(rquantity, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel56)
-                                    .addComponent(jSpinner17, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jSpinner19, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jSpinner21, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jSpinner20, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(squantity, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(oquantity, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(saquantity, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(bquantity, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel4Layout.setVerticalGroup(
@@ -235,32 +235,32 @@ public class grocerries extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rprice)
                     .addComponent(jLabel49)
-                    .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSpinner18, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(rbuy, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rquantity, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(41, 41, 41)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel46)
                     .addComponent(sprice)
-                    .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSpinner17, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(sbuy, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(squantity, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(41, 41, 41)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(oprice)
                     .addComponent(jLabel47)
-                    .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSpinner19, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(obuy, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(oquantity, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(39, 39, 39)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel48)
-                    .addComponent(spricee)
-                    .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSpinner21, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(sapricee)
+                    .addComponent(sabuy, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(saquantity, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bprice)
                     .addComponent(jLabel50)
-                    .addComponent(jButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSpinner20, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(bbuy, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bquantity, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
                 .addComponent(jButton21, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20))
@@ -353,12 +353,9 @@ this.dispose();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bbuy;
     private javax.swing.JLabel bprice;
-    private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton17;
-    private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton19;
-    private javax.swing.JButton jButton20;
+    private javax.swing.JSpinner bquantity;
     private javax.swing.JButton jButton21;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
@@ -370,14 +367,17 @@ this.dispose();
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel56;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JSpinner jSpinner17;
-    private javax.swing.JSpinner jSpinner18;
-    private javax.swing.JSpinner jSpinner19;
-    private javax.swing.JSpinner jSpinner20;
-    private javax.swing.JSpinner jSpinner21;
+    private javax.swing.JButton obuy;
     private javax.swing.JLabel oprice;
+    private javax.swing.JSpinner oquantity;
+    private javax.swing.JButton rbuy;
     private javax.swing.JLabel rprice;
+    private javax.swing.JSpinner rquantity;
+    private javax.swing.JButton sabuy;
+    private javax.swing.JLabel sapricee;
+    private javax.swing.JSpinner saquantity;
+    private javax.swing.JButton sbuy;
     private javax.swing.JLabel sprice;
-    private javax.swing.JLabel spricee;
+    private javax.swing.JSpinner squantity;
     // End of variables declaration//GEN-END:variables
 }

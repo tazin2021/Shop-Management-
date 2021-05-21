@@ -77,17 +77,17 @@
                                       <Component id="oprice" min="-2" max="-2" attributes="0"/>
                                       <Component id="sprice" min="-2" max="-2" attributes="0"/>
                                       <Component id="bprice" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="spricee" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="sapricee" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="245" pref="338" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jButton16" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton17" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton20" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton18" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton19" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbuy" min="-2" max="-2" attributes="0"/>
+                              <Component id="sbuy" min="-2" max="-2" attributes="0"/>
+                              <Component id="obuy" min="-2" max="-2" attributes="0"/>
+                              <Component id="sabuy" min="-2" max="-2" attributes="0"/>
+                              <Component id="bbuy" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="141" max="-2" attributes="0"/>
                       </Group>
@@ -98,12 +98,12 @@
                                   <Component id="jLabel43" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="133" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jSpinner18" min="-2" pref="89" max="-2" attributes="0"/>
+                                      <Component id="rquantity" min="-2" pref="89" max="-2" attributes="0"/>
                                       <Component id="jLabel56" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jSpinner17" alignment="0" min="-2" pref="89" max="-2" attributes="0"/>
-                                      <Component id="jSpinner19" alignment="0" min="-2" pref="89" max="-2" attributes="0"/>
-                                      <Component id="jSpinner21" alignment="0" min="-2" pref="89" max="-2" attributes="0"/>
-                                      <Component id="jSpinner20" alignment="0" min="-2" pref="89" max="-2" attributes="0"/>
+                                      <Component id="squantity" alignment="0" min="-2" pref="89" max="-2" attributes="0"/>
+                                      <Component id="oquantity" alignment="0" min="-2" pref="89" max="-2" attributes="0"/>
+                                      <Component id="saquantity" alignment="0" min="-2" pref="89" max="-2" attributes="0"/>
+                                      <Component id="bquantity" alignment="0" min="-2" pref="89" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -128,36 +128,36 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="rprice" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel49" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton16" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
-                      <Component id="jSpinner18" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
+                      <Component id="rbuy" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="rquantity" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel46" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="sprice" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton17" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
-                      <Component id="jSpinner17" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
+                      <Component id="sbuy" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="squantity" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="oprice" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel47" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton20" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
-                      <Component id="jSpinner19" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
+                      <Component id="obuy" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="oquantity" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel48" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="spricee" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton18" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
-                      <Component id="jSpinner21" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
+                      <Component id="sapricee" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="sabuy" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="saquantity" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="bprice" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel50" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton19" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
-                      <Component id="jSpinner20" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
+                      <Component id="bbuy" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="bquantity" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="58" max="32767" attributes="0"/>
                   <Component id="jButton21" min="-2" pref="43" max="-2" attributes="0"/>
@@ -255,7 +255,7 @@
             <Property name="text" type="java.lang.String" value="Bread"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="spricee">
+        <Component class="javax.swing.JLabel" name="sapricee">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="36" style="1"/>
@@ -321,7 +321,7 @@
             <Property name="text" type="java.lang.String" value="Quantity"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton16">
+        <Component class="javax.swing.JButton" name="rbuy">
           <Properties>
             <Property name="text" type="java.lang.String" value="BUY"/>
           </Properties>
@@ -329,7 +329,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton17">
+        <Component class="javax.swing.JButton" name="sbuy">
           <Properties>
             <Property name="text" type="java.lang.String" value="BUY"/>
           </Properties>
@@ -337,7 +337,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton18">
+        <Component class="javax.swing.JButton" name="sabuy">
           <Properties>
             <Property name="text" type="java.lang.String" value="BUY"/>
           </Properties>
@@ -345,7 +345,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton19">
+        <Component class="javax.swing.JButton" name="bbuy">
           <Properties>
             <Property name="text" type="java.lang.String" value="BUY"/>
           </Properties>
@@ -353,7 +353,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton4ActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton20">
+        <Component class="javax.swing.JButton" name="obuy">
           <Properties>
             <Property name="text" type="java.lang.String" value="BUY"/>
           </Properties>
@@ -361,35 +361,35 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton5ActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JSpinner" name="jSpinner17">
+        <Component class="javax.swing.JSpinner" name="squantity">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="18" style="1"/>
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JSpinner" name="jSpinner18">
+        <Component class="javax.swing.JSpinner" name="rquantity">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="18" style="1"/>
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JSpinner" name="jSpinner19">
+        <Component class="javax.swing.JSpinner" name="oquantity">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="18" style="1"/>
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JSpinner" name="jSpinner20">
+        <Component class="javax.swing.JSpinner" name="bquantity">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="18" style="1"/>
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JSpinner" name="jSpinner21">
+        <Component class="javax.swing.JSpinner" name="saquantity">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="18" style="1"/>
