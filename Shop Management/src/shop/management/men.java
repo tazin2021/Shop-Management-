@@ -1,6 +1,11 @@
 
 package shop.management;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+
 public class men extends javax.swing.JFrame {
 
    
@@ -268,21 +273,157 @@ public class men extends javax.swing.JFrame {
     }//GEN-LAST:event_shquantityActionPerformed
 
     private void sbuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sbuyActionPerformed
-       Payment py = new Payment();
-       py.setVisible(true);
-       this.dispose();
+   String sc = String.valueOf(scode.getSelectedItem());
+        String sp = sprice.getText();
+        String sq = squantity.getText();
+        if(sc.isEmpty() || sp.isEmpty() || sq.isEmpty()){
+             JOptionPane.showMessageDialog(this, "Fill up the form properly.", 
+                     "Error", JOptionPane.ERROR_MESSAGE);
+        }else{
+
+             Connection dbcon = DBconnect.connectDB();
+
+            try {
+                PreparedStatement st = (PreparedStatement)
+                dbcon.prepareStatement("INSERT INTO shirt (scode,sprice,squantity) VALUES(?,?,?)");
+
+
+
+            st.setString(1, sc);
+            st.setString(2, sp);
+            st.setString(3, sq);
+
+
+
+
+
+            int rs = st.executeUpdate();
+
+
+
+            JOptionPane.showMessageDialog(this, "Buy Successful.", 
+                    "Success", JOptionPane.INFORMATION_MESSAGE);
+
+               dispose();
+               Payment hm = new Payment();
+               hm.setVisible(true);
+
+            } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, "Fill up the form properly.", 
+                     "Error", JOptionPane.ERROR_MESSAGE);
+
+            sprice.setText("");
+            sprice.requestFocus();
+            scode.setSelectedItem("");
+            squantity.setText("");
+
+        }
+
+        }
+    }                                    
+
+    private void mbuyActionPerformed(java.awt.event.ActionEvent evt) {                                     
+     
     }//GEN-LAST:event_sbuyActionPerformed
 
     private void pqbuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pqbuyActionPerformed
-        Payment py = new Payment();
-       py.setVisible(true);
-       this.dispose();
+       String pc = String.valueOf(pcode.getSelectedItem());
+        String pp = pprice.getText();
+        String pq = pquantity.getText();
+        if(pc.isEmpty() || pp.isEmpty() ||pq.isEmpty()){
+             JOptionPane.showMessageDialog(this, "Fill up the form properly.", 
+                     "Error", JOptionPane.ERROR_MESSAGE);
+        }else{
+
+             Connection dbcon = DBconnect.connectDB();
+
+            try {
+                PreparedStatement st = (PreparedStatement)
+                dbcon.prepareStatement("INSERT INTO pant (pcode,pprice,pquantity) VALUES(?,?,?)");
+
+
+
+            st.setString(1, pc);
+            st.setString(2, pp);
+            st.setString(3, pq);
+
+
+
+
+
+            int rs = st.executeUpdate();
+
+
+
+            JOptionPane.showMessageDialog(this, "Buy Successful.", 
+                    "Success", JOptionPane.INFORMATION_MESSAGE);
+
+               dispose();
+               Payment hm = new Payment();
+               hm.setVisible(true);
+
+            } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, "Fill up the form properly.", 
+                     "Error", JOptionPane.ERROR_MESSAGE);
+
+            pprice.setText("");
+            pprice.requestFocus();
+            pcode.setSelectedItem("");
+            pquantity.setText("");
+
+        }
+
+        }
     }//GEN-LAST:event_pqbuyActionPerformed
 
     private void shbuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_shbuyActionPerformed
-Payment py = new Payment();
-       py.setVisible(true);
-       this.dispose();        
+ String shc = String.valueOf(shcode.getSelectedItem());
+        String shp = shprice.getText();
+        String shq = shquantity.getText();
+        if(shc.isEmpty() || shp.isEmpty() ||shq.isEmpty()){
+             JOptionPane.showMessageDialog(this, "Fill up the form properly.", 
+                     "Error", JOptionPane.ERROR_MESSAGE);
+        }else{
+
+             Connection dbcon = DBconnect.connectDB();
+
+            try {
+                PreparedStatement st = (PreparedStatement)
+                dbcon.prepareStatement("INSERT INTO mshoes (shcode,shprice,mshuantity) VALUES(?,?,?)");
+
+
+
+            st.setString(1, shc);
+            st.setString(2, shp);
+            st.setString(3, shq);
+
+
+
+
+
+            int rs = st.executeUpdate();
+
+
+
+            JOptionPane.showMessageDialog(this, "Buy Successful.", 
+                    "Success", JOptionPane.INFORMATION_MESSAGE);
+
+               dispose();
+               Payment hm = new Payment();
+               hm.setVisible(true);
+
+            } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, "Fill up the form properly.", 
+                     "Error", JOptionPane.ERROR_MESSAGE);
+
+            shprice.setText("");
+            shprice.requestFocus();
+            shcode.setSelectedItem("");
+            shquantity.setText("");
+
+        }
+
+        }       
     }//GEN-LAST:event_shbuyActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
