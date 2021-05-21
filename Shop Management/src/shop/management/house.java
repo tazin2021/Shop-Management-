@@ -5,6 +5,11 @@
  */
 package shop.management;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ASUS
@@ -37,7 +42,7 @@ public class house extends javax.swing.JFrame {
         lquantity = new javax.swing.JTextField();
         tvquantity = new javax.swing.JTextField();
         tvprice = new javax.swing.JLabel();
-        llight = new javax.swing.JLabel();
+        lprice = new javax.swing.JLabel();
         fprice = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -114,9 +119,9 @@ public class house extends javax.swing.JFrame {
         tvprice.setForeground(new java.awt.Color(255, 255, 255));
         tvprice.setText("40000");
 
-        llight.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        llight.setForeground(new java.awt.Color(255, 255, 255));
-        llight.setText("500");
+        lprice.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        lprice.setForeground(new java.awt.Color(255, 255, 255));
+        lprice.setText("500");
 
         fprice.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         fprice.setForeground(new java.awt.Color(255, 255, 255));
@@ -187,33 +192,27 @@ public class house extends javax.swing.JFrame {
                                             .addComponent(jLabel7))
                                         .addGap(27, 27, 27)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(tvcode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                     .addComponent(jLabel17)
                                                     .addComponent(fcode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addComponent(lcode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGap(56, 56, 56)
                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                                        .addGap(41, 41, 41)
-                                                        .addComponent(llight))
-                                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                                        .addGap(38, 38, 38)
-                                                        .addComponent(fprice))))
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(tvcode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(26, 26, 26)
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(lprice)
+                                                    .addComponent(fprice)
                                                     .addComponent(tvprice)
                                                     .addComponent(jLabel16)))))
                                     .addComponent(jLabel18))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
                                 .addComponent(jLabel15)
                                 .addGap(204, 204, 204))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(286, 286, 286)
                         .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addContainerGap(6, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(265, 265, 265)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -240,7 +239,7 @@ public class house extends javax.swing.JFrame {
                 .addGap(14, 14, 14)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(llight)
+                    .addComponent(lprice)
                     .addComponent(lquantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbuy)
                     .addComponent(lcode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -253,7 +252,7 @@ public class house extends javax.swing.JFrame {
                     .addComponent(tvcode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(69, 69, 69)
                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(87, Short.MAX_VALUE))
+                .addContainerGap(107, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -278,21 +277,153 @@ public class house extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void tvbuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tvbuyActionPerformed
-        Payment py = new Payment();
-        py.setVisible(true);
-        this.dispose();
+       String tvc = String.valueOf(tvcode.getSelectedItem());
+        String tvp = tvprice.getText();
+        String tvq = tvquantity.getText();
+        if(tvc.isEmpty() || tvp.isEmpty() || tvq.isEmpty()){
+             JOptionPane.showMessageDialog(this, "Fill up the form properly.", 
+                     "Error", JOptionPane.ERROR_MESSAGE);
+        }else{
+
+             Connection dbcon = DBconnect.connectDB();
+
+            try {
+                PreparedStatement st = (PreparedStatement)
+                dbcon.prepareStatement("INSERT INTO tv (tvcode,tvprice,tvquantity) VALUES(?,?,?)");
+
+
+
+            st.setString(1, tvc);
+            st.setString(2, tvp);
+            st.setString(3, tvq);
+
+
+
+
+
+            int rs = st.executeUpdate();
+
+
+
+            JOptionPane.showMessageDialog(this, "Buy Successful.", 
+                    "Success", JOptionPane.INFORMATION_MESSAGE);
+
+               dispose();
+               Payment hm = new Payment();
+               hm.setVisible(true);
+
+            } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, "Fill up the form properly.", 
+                     "Error", JOptionPane.ERROR_MESSAGE);
+
+            tvprice.setText("");
+            tvprice.requestFocus();
+            tvcode.setSelectedItem("");
+            tvquantity.setText("");
+
+        }
+
+        }
     }//GEN-LAST:event_tvbuyActionPerformed
 
     private void lbuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lbuyActionPerformed
-        Payment py = new Payment();
-        py.setVisible(true);
-        this.dispose();
+       String lc = String.valueOf(lcode.getSelectedItem());
+        String lp = lprice.getText();
+        String lq = lquantity.getText();
+        if(lc.isEmpty() || lp.isEmpty() || lq.isEmpty()){
+             JOptionPane.showMessageDialog(this, "Fill up the form properly.", 
+                     "Error", JOptionPane.ERROR_MESSAGE);
+        }else{
+
+             Connection dbcon = DBconnect.connectDB();
+
+            try {
+                PreparedStatement st = (PreparedStatement)
+                dbcon.prepareStatement("INSERT INTO light (lcode,lprice,lquantity) VALUES(?,?,?)");
+
+
+
+            st.setString(1, lc);
+            st.setString(2, lp);
+            st.setString(3, lq);
+
+
+
+
+
+            int rs = st.executeUpdate();
+
+
+
+            JOptionPane.showMessageDialog(this, "Buy Successful.", 
+                    "Success", JOptionPane.INFORMATION_MESSAGE);
+
+               dispose();
+               Payment hm = new Payment();
+               hm.setVisible(true);
+
+            } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, "Fill up the form properly.", 
+                     "Error", JOptionPane.ERROR_MESSAGE);
+
+            lprice.setText("");
+            lprice.requestFocus();
+            lcode.setSelectedItem("");
+            lquantity.setText("");
+
+        }
+
+        }
     }//GEN-LAST:event_lbuyActionPerformed
 
     private void fbuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fbuyActionPerformed
-        Payment py = new Payment();
-        py.setVisible(true);
-        this.dispose();
+         String fc = String.valueOf(fcode.getSelectedItem());
+        String fp = fprice.getText();
+        String fq = fquantity.getText();
+        if(fc.isEmpty() || fp.isEmpty() || fq.isEmpty()){
+             JOptionPane.showMessageDialog(this, "Fill up the form properly.", 
+                     "Error", JOptionPane.ERROR_MESSAGE);
+        }else{
+
+             Connection dbcon = DBconnect.connectDB();
+
+            try {
+                PreparedStatement st = (PreparedStatement)
+                dbcon.prepareStatement("INSERT INTO fan (fcode,fprice,fquantity) VALUES(?,?,?)");
+
+
+
+            st.setString(1, fc);
+            st.setString(2, fp);
+            st.setString(3, fq);
+
+
+
+
+
+            int rs = st.executeUpdate();
+
+
+
+            JOptionPane.showMessageDialog(this, "Buy Successful.", 
+                    "Success", JOptionPane.INFORMATION_MESSAGE);
+
+               dispose();
+               Payment hm = new Payment();
+               hm.setVisible(true);
+
+            } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, "Fill up the form properly.", 
+                     "Error", JOptionPane.ERROR_MESSAGE);
+
+            fprice.setText("");
+            fprice.requestFocus();
+            fcode.setSelectedItem("");
+            fquantity.setText("");
+
+        }
+
+        }
     }//GEN-LAST:event_fbuyActionPerformed
 
     private void fquantityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fquantityActionPerformed
@@ -359,7 +490,7 @@ public class house extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton lbuy;
     private javax.swing.JComboBox<String> lcode;
-    private javax.swing.JLabel llight;
+    private javax.swing.JLabel lprice;
     private javax.swing.JTextField lquantity;
     private javax.swing.JButton tvbuy;
     private javax.swing.JComboBox<String> tvcode;
