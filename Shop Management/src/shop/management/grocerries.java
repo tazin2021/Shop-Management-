@@ -5,6 +5,11 @@
  */
 package shop.management;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author user
@@ -36,7 +41,7 @@ public class grocerries extends javax.swing.JFrame {
         jLabel48 = new javax.swing.JLabel();
         jLabel49 = new javax.swing.JLabel();
         jLabel50 = new javax.swing.JLabel();
-        sapricee = new javax.swing.JLabel();
+        saprice = new javax.swing.JLabel();
         rprice = new javax.swing.JLabel();
         oprice = new javax.swing.JLabel();
         bprice = new javax.swing.JLabel();
@@ -47,12 +52,12 @@ public class grocerries extends javax.swing.JFrame {
         sabuy = new javax.swing.JButton();
         bbuy = new javax.swing.JButton();
         obuy = new javax.swing.JButton();
-        squantity = new javax.swing.JSpinner();
-        rquantity = new javax.swing.JSpinner();
-        oquantity = new javax.swing.JSpinner();
-        bquantity = new javax.swing.JSpinner();
-        saquantity = new javax.swing.JSpinner();
         jButton21 = new javax.swing.JButton();
+        squantity = new javax.swing.JTextField();
+        oquantity = new javax.swing.JTextField();
+        rquantity = new javax.swing.JTextField();
+        bquantity = new javax.swing.JTextField();
+        saquantity = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -91,9 +96,9 @@ public class grocerries extends javax.swing.JFrame {
         jLabel50.setForeground(new java.awt.Color(255, 255, 255));
         jLabel50.setText("Bread");
 
-        sapricee.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        sapricee.setForeground(new java.awt.Color(255, 255, 255));
-        sapricee.setText("30/kg");
+        saprice.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        saprice.setForeground(new java.awt.Color(255, 255, 255));
+        saprice.setText("30/kg");
 
         rprice.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         rprice.setForeground(new java.awt.Color(255, 255, 255));
@@ -150,20 +155,40 @@ public class grocerries extends javax.swing.JFrame {
             }
         });
 
-        squantity.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-
-        rquantity.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-
-        oquantity.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-
-        bquantity.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-
-        saquantity.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-
         jButton21.setText("Baxk");
         jButton21.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton21ActionPerformed(evt);
+            }
+        });
+
+        squantity.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                squantityActionPerformed(evt);
+            }
+        });
+
+        oquantity.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                oquantityActionPerformed(evt);
+            }
+        });
+
+        rquantity.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rquantityActionPerformed(evt);
+            }
+        });
+
+        bquantity.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bquantityActionPerformed(evt);
+            }
+        });
+
+        saquantity.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saquantityActionPerformed(evt);
             }
         });
 
@@ -194,11 +219,11 @@ public class grocerries extends javax.swing.JFrame {
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(oprice)
                                     .addComponent(sprice)
+                                    .addComponent(oprice)
                                     .addComponent(bprice)
-                                    .addComponent(sapricee))
-                                .addGap(245, 338, Short.MAX_VALUE)))
+                                    .addComponent(saprice))
+                                .addGap(90, 338, Short.MAX_VALUE)))
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(rbuy)
                             .addComponent(sbuy)
@@ -207,18 +232,18 @@ public class grocerries extends javax.swing.JFrame {
                             .addComponent(bbuy))
                         .addGap(141, 141, 141))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel44)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(jLabel43)
-                                .addGap(133, 133, 133)
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(rquantity, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel56)
-                                    .addComponent(squantity, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(oquantity, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(saquantity, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(bquantity, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(bquantity, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel44)
+                                .addGroup(jPanel4Layout.createSequentialGroup()
+                                    .addComponent(jLabel43)
+                                    .addGap(133, 133, 133)
+                                    .addComponent(jLabel56)))
+                            .addComponent(saquantity, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(oquantity, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(squantity, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(rquantity, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel4Layout.setVerticalGroup(
@@ -252,7 +277,7 @@ public class grocerries extends javax.swing.JFrame {
                 .addGap(39, 39, 39)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel48)
-                    .addComponent(sapricee)
+                    .addComponent(saprice)
                     .addComponent(sabuy, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(saquantity, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33)
@@ -282,33 +307,244 @@ public class grocerries extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        Payment py = new Payment();
-       py.setVisible(true);
-       this.dispose(); 
+        String op = oprice.getText();
+        String oq = oquantity.getText();
+        if( op.isEmpty() || oq.isEmpty()){
+             JOptionPane.showMessageDialog(this, "Fill up the form properly.", 
+                     "Error", JOptionPane.ERROR_MESSAGE);
+        }else{
+
+             Connection dbcon = DBconnect.connectDB();
+
+            try {
+                PreparedStatement st = (PreparedStatement)
+                dbcon.prepareStatement("INSERT INTO oil (oprice,oquantity) VALUES(?,?)");
+
+
+
+            st.setString(1, op);
+            st.setString(2, oq);
+            
+
+
+
+
+
+            int rs = st.executeUpdate();
+
+
+
+            JOptionPane.showMessageDialog(this, "Buy Successful.", 
+                    "Success", JOptionPane.INFORMATION_MESSAGE);
+
+               dispose();
+               Payment hm = new Payment();
+               hm.setVisible(true);
+
+            } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, "Fill up the form properly.", 
+                     "Error", JOptionPane.ERROR_MESSAGE);
+
+            oprice.setText("");
+            oprice.requestFocus();
+            oquantity.setText("");
+
+        }
+
+        } 
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-       Payment py = new Payment();
-       py.setVisible(true);
-       this.dispose(); 
+       String bp = bprice.getText();
+        String bq = bquantity.getText();
+        if( bp.isEmpty() || bq.isEmpty()){
+             JOptionPane.showMessageDialog(this, "Fill up the form properly.", 
+                     "Error", JOptionPane.ERROR_MESSAGE);
+        }else{
+
+             Connection dbcon = DBconnect.connectDB();
+
+            try {
+                PreparedStatement st = (PreparedStatement)
+                dbcon.prepareStatement("INSERT INTO bread (bprice,bquantity) VALUES(?,?)");
+
+
+
+            st.setString(1, bp);
+            st.setString(2, bq);
+            
+
+
+
+
+
+            int rs = st.executeUpdate();
+
+
+
+            JOptionPane.showMessageDialog(this, "Buy Successful.", 
+                    "Success", JOptionPane.INFORMATION_MESSAGE);
+
+               dispose();
+               Payment hm = new Payment();
+               hm.setVisible(true);
+
+            } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, "Fill up the form properly.", 
+                     "Error", JOptionPane.ERROR_MESSAGE);
+
+            bprice.setText("");
+            bprice.requestFocus();
+            bquantity.setText("");
+
+        }
+
+        } 
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-      Payment py = new Payment();
-       py.setVisible(true);
-       this.dispose(); 
+     String rp = rprice.getText();
+        String rq = rquantity.getText();
+        if( rp.isEmpty() || rq.isEmpty()){
+             JOptionPane.showMessageDialog(this, "Fill up the form properly.", 
+                     "Error", JOptionPane.ERROR_MESSAGE);
+        }else{
+
+             Connection dbcon = DBconnect.connectDB();
+
+            try {
+                PreparedStatement st = (PreparedStatement)
+                dbcon.prepareStatement("INSERT INTO rice (rprice,rquantity) VALUES(?,?)");
+
+
+
+            st.setString(1, rp);
+            st.setString(2, rq);
+            
+
+
+
+
+
+            int rs = st.executeUpdate();
+
+
+
+            JOptionPane.showMessageDialog(this, "Buy Successful.", 
+                    "Success", JOptionPane.INFORMATION_MESSAGE);
+
+               dispose();
+               Payment hm = new Payment();
+               hm.setVisible(true);
+
+            } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, "Fill up the form properly.", 
+                     "Error", JOptionPane.ERROR_MESSAGE);
+
+            rprice.setText("");
+            rprice.requestFocus();
+            rquantity.setText("");
+
+        }
+
+        } 
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        Payment py = new Payment();
-       py.setVisible(true);
-       this.dispose(); 
+        String sap = saprice.getText();
+        String saq = saquantity.getText();
+        if( sap.isEmpty() || saq.isEmpty()){
+             JOptionPane.showMessageDialog(this, "Fill up the form properly.", 
+                     "Error", JOptionPane.ERROR_MESSAGE);
+        }else{
+
+             Connection dbcon = DBconnect.connectDB();
+
+            try {
+                PreparedStatement st = (PreparedStatement)
+                dbcon.prepareStatement("INSERT INTO salt (saprice,saquantity) VALUES(?,?)");
+
+
+
+            st.setString(1, sap);
+            st.setString(2, saq);
+            
+
+
+
+
+
+            int rs = st.executeUpdate();
+
+
+
+            JOptionPane.showMessageDialog(this, "Buy Successful.", 
+                    "Success", JOptionPane.INFORMATION_MESSAGE);
+
+               dispose();
+               Payment hm = new Payment();
+               hm.setVisible(true);
+
+            } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, "Fill up the form properly.", 
+                     "Error", JOptionPane.ERROR_MESSAGE);
+
+            saprice.setText("");
+            saprice.requestFocus();
+            saquantity.setText("");
+
+        }
+
+        } 
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Payment py = new Payment();
-       py.setVisible(true);
-       this.dispose(); 
+         
+        String rp = rprice.getText();
+        String rq = rquantity.getText();
+        if( rp.isEmpty() || rq.isEmpty()){
+             JOptionPane.showMessageDialog(this, "Fill up the form properly.", 
+                     "Error", JOptionPane.ERROR_MESSAGE);
+        }else{
+
+             Connection dbcon = DBconnect.connectDB();
+
+            try {
+                PreparedStatement st = (PreparedStatement)
+                dbcon.prepareStatement("INSERT INTO rice (rprice,rquantity) VALUES(?,?)");
+
+
+
+            st.setString(1, rp);
+            st.setString(2, rq);
+            
+
+
+
+
+
+            int rs = st.executeUpdate();
+
+
+
+            JOptionPane.showMessageDialog(this, "Buy Successful.", 
+                    "Success", JOptionPane.INFORMATION_MESSAGE);
+
+               dispose();
+               Payment hm = new Payment();
+               hm.setVisible(true);
+
+            } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, "Fill up the form properly.", 
+                     "Error", JOptionPane.ERROR_MESSAGE);
+
+            rprice.setText("");
+            rprice.requestFocus();
+            rquantity.setText("");
+
+        }
+
+        } 
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
@@ -316,6 +552,26 @@ public class grocerries extends javax.swing.JFrame {
 hm.setVisible(true);
 this.dispose();
     }//GEN-LAST:event_jButton21ActionPerformed
+
+    private void squantityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_squantityActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_squantityActionPerformed
+
+    private void oquantityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oquantityActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_oquantityActionPerformed
+
+    private void rquantityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rquantityActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rquantityActionPerformed
+
+    private void bquantityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bquantityActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bquantityActionPerformed
+
+    private void saquantityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saquantityActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_saquantityActionPerformed
 
     /**
      * @param args the command line arguments
@@ -355,7 +611,7 @@ this.dispose();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bbuy;
     private javax.swing.JLabel bprice;
-    private javax.swing.JSpinner bquantity;
+    private javax.swing.JTextField bquantity;
     private javax.swing.JButton jButton21;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
@@ -369,15 +625,15 @@ this.dispose();
     private javax.swing.JPanel jPanel4;
     private javax.swing.JButton obuy;
     private javax.swing.JLabel oprice;
-    private javax.swing.JSpinner oquantity;
+    private javax.swing.JTextField oquantity;
     private javax.swing.JButton rbuy;
     private javax.swing.JLabel rprice;
-    private javax.swing.JSpinner rquantity;
+    private javax.swing.JTextField rquantity;
     private javax.swing.JButton sabuy;
-    private javax.swing.JLabel sapricee;
-    private javax.swing.JSpinner saquantity;
+    private javax.swing.JLabel saprice;
+    private javax.swing.JTextField saquantity;
     private javax.swing.JButton sbuy;
     private javax.swing.JLabel sprice;
-    private javax.swing.JSpinner squantity;
+    private javax.swing.JTextField squantity;
     // End of variables declaration//GEN-END:variables
 }
